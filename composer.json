@@ -1,5 +1,5 @@
 {
-    "name": "pistacy/feature-traverser",
+    "name": "pistacy/feature-traverser-php",
     "description": "A library for traversing PHP code dependencies starting from a specific entry point",
     "type": "library",
     "license": "MIT",
