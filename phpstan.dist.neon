@@ -1,0 +1,28 @@
+parameters:
+    level: 8
+    paths:
+        - src/
+        - tests/
+    ignoreErrors:
+        # Test fixtures intentionally use non-existent classes
+        -
+            message: '#has invalid type#'
+            path: tests/resources/fixtures/SimpleClass.php
+        -
+            message: '#Strict comparison using !== between PhpParser\\Node\\Identifier and null will always evaluate to true#'
+            path: src/Analyzer/NodeVisitor/CallCollectorVisitor.php
+        -
+            message: '#Strict comparison using !== between PhpParser\\Node\\Identifier and null will always evaluate to true#'
+            path: src/Extractor/NameShortenerVisitor.php
+        -
+            message: '#Strict comparison using !== between#'
+            path: src/Extractor/UseStatementMerger.php
+        -
+            message: '#Comparison operation ">" between int<1, max> and 0 is always true#'
+            path: src/Extractor/UnusedUseRemover.php
+        -
+            message: '#Strict comparison using !== between PhpParser\\Node\\Identifier and null will always evaluate to true#'
+            path: src/Extractor/UnusedUseRemover.php
+        -
+            message: '#Strict comparison using !== between PhpParser\\Node\\Identifier and null will always evaluate to true#'
+            path: src/Extractor/UseStatementDeduplicator.php
