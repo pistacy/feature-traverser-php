@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Result;
+namespace Pistacy\FeatureTraverser\Result;
 
 use Countable;
 use IteratorAggregate;

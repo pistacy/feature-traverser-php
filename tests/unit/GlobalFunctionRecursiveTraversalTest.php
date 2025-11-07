@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests;
+namespace Pistacy\FeatureTraverser\Tests;
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
 use PHPUnit\Framework\TestCase;
 
 final class GlobalFunctionRecursiveTraversalTest extends TestCase

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Extractor;
+namespace Pistacy\FeatureTraverser\Extractor;
 
-use Codeviastudio\FeatureTraverser\Parser\ParserCache;
-use Codeviastudio\FeatureTraverser\Result\ReferenceCollection;
+use Pistacy\FeatureTraverser\Parser\ParserCache;
+use Pistacy\FeatureTraverser\Result\ReferenceCollection;
 use PhpParser\Node;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitorAbstract;
@@ -265,7 +265,7 @@ final readonly class CodeExtractor
     private function findInternalCallsInMethod(array $stmts, string $methodName): array
     {
         $collector = new InternalMethodCallCollector();
-        $targetMethodCollector = new class($methodName, $collector) extends NodeVisitorAbstract {
+        $targetMethodCollector = new class ($methodName, $collector) extends NodeVisitorAbstract {
             private bool $insideTargetMethod = false;
 
             public function __construct(

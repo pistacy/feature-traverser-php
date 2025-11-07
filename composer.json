@@ -1,5 +1,5 @@
 {
-    "name": "codeviastudio/feature-traverser",
+    "name": "pistacy/feature-traverser",
     "description": "A library for traversing PHP code dependencies starting from a specific entry point",
     "type": "library",
     "license": "MIT",
@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Codeviastudio\\FeatureTraverser\\": "src/"
+            "Pistacy\\FeatureTraverser\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codeviastudio\\FeatureTraverser\\Tests\\": "tests/unit/",
-            "Codeviastudio\\FeatureTraverser\\Tests\\Resources\\Fixtures\\": "tests/resources/fixtures/"
+            "Pistacy\\FeatureTraverser\\Tests\\": "tests/unit/",
+            "Pistacy\\FeatureTraverser\\Tests\\Resources\\Fixtures\\": "tests/resources/fixtures/"
         }
     },
     "minimum-stability": "stable",

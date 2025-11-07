@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Analyzer\NodeVisitor;
+namespace Pistacy\FeatureTraverser\Analyzer\NodeVisitor;
 
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;

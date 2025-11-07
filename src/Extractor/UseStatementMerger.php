@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Extractor;
+namespace Pistacy\FeatureTraverser\Extractor;
 
 use PhpParser\Node;
 

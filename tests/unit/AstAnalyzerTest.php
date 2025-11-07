@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Analyzer;
+namespace Pistacy\FeatureTraverser\Tests\Analyzer;
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
 use PHPUnit\Framework\TestCase;
 
 final class AstAnalyzerTest extends TestCase
@@ -49,7 +49,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 
@@ -69,7 +69,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 
@@ -77,7 +77,7 @@ final class AstAnalyzerTest extends TestCase
         self::assertNotEmpty($invokableCalls);
 
         $invokableCall = array_values($invokableCalls)[0];
-        self::assertSame('Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyService', $invokableCall['class']);
+        self::assertSame('Pistacy\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyService', $invokableCall['class']);
         self::assertSame('__invoke', $invokableCall['method']);
     }
 
@@ -87,7 +87,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 
@@ -101,7 +101,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 
@@ -118,7 +118,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 
@@ -135,7 +135,7 @@ final class AstAnalyzerTest extends TestCase
 
         $result = $this->analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
 

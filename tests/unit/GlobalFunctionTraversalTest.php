@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests;
+namespace Pistacy\FeatureTraverser\Tests;
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
-use Codeviastudio\FeatureTraverser\Config\EntryPoint;
-use Codeviastudio\FeatureTraverser\Config\TraversalConfig;
-use Codeviastudio\FeatureTraverser\FeatureTraverser;
-use Codeviastudio\FeatureTraverser\Resolver\ClassResolver;
-use Codeviastudio\FeatureTraverser\Tests\Resolver\FakeClassLoader;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Config\EntryPoint;
+use Pistacy\FeatureTraverser\Config\TraversalConfig;
+use Pistacy\FeatureTraverser\FeatureTraverser;
+use Pistacy\FeatureTraverser\Resolver\ClassResolver;
+use Pistacy\FeatureTraverser\Tests\Resolver\FakeClassLoader;
 use PHPUnit\Framework\TestCase;
 
 final class GlobalFunctionTraversalTest extends TestCase
@@ -21,7 +21,7 @@ final class GlobalFunctionTraversalTest extends TestCase
 
         $result = $analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
             'methodUsingFunctions'
         );
 
@@ -40,7 +40,7 @@ final class GlobalFunctionTraversalTest extends TestCase
 
         $result = $analyzer->analyzeMethod(
             $filePath,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
             'methodUsingFunctions'
         );
 
@@ -56,7 +56,7 @@ final class GlobalFunctionTraversalTest extends TestCase
         $classFilePath = (string) realpath(__DIR__ . '/../resources/fixtures/ClassUsingGlobalFunctions.php');
 
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions' => $classFilePath,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions' => $classFilePath,
         ]);
 
         $classResolver = new ClassResolver($classLoader);
@@ -64,7 +64,7 @@ final class GlobalFunctionTraversalTest extends TestCase
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
             'methodUsingFunctions'
         );
         $config = new TraversalConfig(entryPoint: $entryPoint);
@@ -76,7 +76,7 @@ final class GlobalFunctionTraversalTest extends TestCase
 
         $rootReference = $result->all()[0];
         self::assertSame(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions::methodUsingFunctions',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions::methodUsingFunctions',
             $rootReference->getFullyQualifiedName()
         );
     }
@@ -86,7 +86,7 @@ final class GlobalFunctionTraversalTest extends TestCase
         $classFilePath = (string) realpath(__DIR__ . '/../resources/fixtures/ClassUsingGlobalFunctions.php');
 
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions' => $classFilePath,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions' => $classFilePath,
         ]);
 
         $classResolver = new ClassResolver($classLoader);
@@ -94,7 +94,7 @@ final class GlobalFunctionTraversalTest extends TestCase
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\ClassUsingGlobalFunctions',
             'methodUsingFunctions'
         );
         $config = new TraversalConfig(entryPoint: $entryPoint);

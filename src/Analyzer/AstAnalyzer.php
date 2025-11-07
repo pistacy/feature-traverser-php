@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Analyzer;
+namespace Pistacy\FeatureTraverser\Analyzer;
 
-use Codeviastudio\FeatureTraverser\Analyzer\NodeVisitor\CallCollectorVisitor;
-use Codeviastudio\FeatureTraverser\Parser\ParserCache;
+use Pistacy\FeatureTraverser\Analyzer\NodeVisitor\CallCollectorVisitor;
+use Pistacy\FeatureTraverser\Parser\ParserCache;
 use PhpParser\NodeTraverser;
 
 final readonly class AstAnalyzer

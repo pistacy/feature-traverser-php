@@ -1,12 +1,15 @@
 phpstan:
-	$(PHPROOT) vendor/bin/phpstan analyse -c phpstan.dist.neon
+	vendor/bin/phpstan analyse -c phpstan.dist.neon
 
 phpcs:
-	$(PHPROOT) vendor/bin/phpcs --standard=phpcs.xml.dist
+	vendor/bin/phpcs --standard=phpcs.xml.dist
 
 phpcbf:
-	$(PHPROOT) vendor/bin/phpcbf --standard=phpcs.xml.dist
+	vendor/bin/phpcbf --standard=phpcs.xml.dist
 
 stan: phpcbf phpcs phpstan
+
+test:
+	vendor/bin/phpunit -c phpunit.xml
 
 .SILENT:

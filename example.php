@@ -12,13 +12,13 @@ declare(strict_types=1);
 // Load the library's autoloader
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
-use Codeviastudio\FeatureTraverser\Config\EntryPoint;
-use Codeviastudio\FeatureTraverser\Config\TraversalConfig;
-use Codeviastudio\FeatureTraverser\Extractor\CodeExtractor;
-use Codeviastudio\FeatureTraverser\FeatureTraverser;
-use Codeviastudio\FeatureTraverser\Parser\ParserCache;
-use Codeviastudio\FeatureTraverser\Resolver\ClassResolver;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Config\EntryPoint;
+use Pistacy\FeatureTraverser\Config\TraversalConfig;
+use Pistacy\FeatureTraverser\Extractor\CodeExtractor;
+use Pistacy\FeatureTraverser\FeatureTraverser;
+use Pistacy\FeatureTraverser\Parser\ParserCache;
+use Pistacy\FeatureTraverser\Resolver\ClassResolver;
 
 // Get the Composer ClassLoader from the main project (for resolving Pistacy classes)
 $classLoader = require __DIR__ . '/../../vendor/autoload.php';
@@ -33,7 +33,7 @@ $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
 // Configure the traversal
 $entryPoint = new EntryPoint(
-    className: 'Codeviastudio\Pistacy\C4Model\UserInterface\Web\Controller\AddElementToViewController',
+    className: 'Pistacy\Pistacy\C4Model\UserInterface\Web\Controller\AddElementToViewController',
     methodName: '__invoke',
 );
 
@@ -125,7 +125,7 @@ if (count($lines) > 50) {
 /**
  * Helper function to print reference tree
  */
-function printReference(\Codeviastudio\FeatureTraverser\Result\Reference $reference, int $indentLevel): void
+function printReference(\Pistacy\FeatureTraverser\Result\Reference $reference, int $indentLevel): void
 {
     $indent = str_repeat('  ', $indentLevel);
     $icon = match ($reference->getType()->value) {

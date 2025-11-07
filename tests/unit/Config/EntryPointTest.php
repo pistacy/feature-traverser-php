@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Config;
+namespace Pistacy\FeatureTraverser\Tests\Config;
 
-use Codeviastudio\FeatureTraverser\Config\EntryPoint;
+use Pistacy\FeatureTraverser\Config\EntryPoint;
 use PHPUnit\Framework\TestCase;
 
 final class EntryPointTest extends TestCase

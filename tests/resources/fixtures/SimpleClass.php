@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures;
+namespace Pistacy\FeatureTraverser\Tests\Resources\Fixtures;
 
-use Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyService;
-use Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyRepository;
+use Pistacy\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyService;
+use Pistacy\FeatureTraverser\Tests\Resources\Fixtures\Dependency\MyRepository;
 
 final class SimpleClass
 {

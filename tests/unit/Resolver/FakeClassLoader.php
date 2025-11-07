@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Resolver;
+namespace Pistacy\FeatureTraverser\Tests\Resolver;
 
 use Composer\Autoload\ClassLoader;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Config;
+namespace Pistacy\FeatureTraverser\Config;
 
 final readonly class EntryPoint
 {

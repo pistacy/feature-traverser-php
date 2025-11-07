@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Resolver;
+namespace Pistacy\FeatureTraverser\Tests\Resolver;
 
-use Codeviastudio\FeatureTraverser\Resolver\ClassResolver;
+use Pistacy\FeatureTraverser\Resolver\ClassResolver;
 use PHPUnit\Framework\TestCase;
 
 final class ClassResolverTest extends TestCase

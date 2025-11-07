@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests;
+namespace Pistacy\FeatureTraverser\Tests;
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
-use Codeviastudio\FeatureTraverser\Config\EntryPoint;
-use Codeviastudio\FeatureTraverser\Config\TraversalConfig;
-use Codeviastudio\FeatureTraverser\FeatureTraverser;
-use Codeviastudio\FeatureTraverser\Tests\Resolver\FakeClassLoader;
-use Codeviastudio\FeatureTraverser\Resolver\ClassResolver;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Config\EntryPoint;
+use Pistacy\FeatureTraverser\Config\TraversalConfig;
+use Pistacy\FeatureTraverser\FeatureTraverser;
+use Pistacy\FeatureTraverser\Tests\Resolver\FakeClassLoader;
+use Pistacy\FeatureTraverser\Resolver\ClassResolver;
 use PHPUnit\Framework\TestCase;
 
 final class FeatureTraverserTest extends TestCase
@@ -36,14 +36,14 @@ final class FeatureTraverserTest extends TestCase
             self::fail('Could not resolve file path');
         }
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass' => $filePath,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass' => $filePath,
         ]);
         $classResolver = new ClassResolver($classLoader);
         $astAnalyzer = new AstAnalyzer();
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\SimpleClass',
             'myMethod'
         );
         $config = new TraversalConfig(
@@ -63,16 +63,16 @@ final class FeatureTraverserTest extends TestCase
         $filePathC = (string) realpath(__DIR__ . '/../resources/fixtures/CircularC.php');
 
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
         ]);
         $classResolver = new ClassResolver($classLoader);
         $astAnalyzer = new AstAnalyzer();
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
             'method'
         );
         $config = new TraversalConfig(
@@ -93,16 +93,16 @@ final class FeatureTraverserTest extends TestCase
         $filePathC = (string) realpath(__DIR__ . '/../resources/fixtures/CircularC.php');
 
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
         ]);
         $classResolver = new ClassResolver($classLoader);
         $astAnalyzer = new AstAnalyzer();
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
             'method'
         );
         $config = new TraversalConfig(entryPoint: $entryPoint);
@@ -125,16 +125,16 @@ final class FeatureTraverserTest extends TestCase
         $filePathC = (string) realpath(__DIR__ . '/../resources/fixtures/CircularC.php');
 
         $classLoader = new FakeClassLoader([
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA' => $filePathA,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularB' => $filePathB,
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularC' => $filePathC,
         ]);
         $classResolver = new ClassResolver($classLoader);
         $astAnalyzer = new AstAnalyzer();
         $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
         $entryPoint = new EntryPoint(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularA',
             'method'
         );
         $config = new TraversalConfig(entryPoint: $entryPoint);
@@ -149,7 +149,7 @@ final class FeatureTraverserTest extends TestCase
 
         $firstChild = $rootReference->getChildren()[0];
         self::assertSame(
-            'Codeviastudio\FeatureTraverser\Tests\Resources\Fixtures\CircularB::staticMethod',
+            'Pistacy\FeatureTraverser\Tests\Resources\Fixtures\CircularB::staticMethod',
             $firstChild->getFullyQualifiedName()
         );
     }

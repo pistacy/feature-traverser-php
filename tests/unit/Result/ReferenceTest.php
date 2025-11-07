@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser\Tests\Result;
+namespace Pistacy\FeatureTraverser\Tests\Result;
 
-use Codeviastudio\FeatureTraverser\Result\Reference;
-use Codeviastudio\FeatureTraverser\Result\ReferenceType;
+use Pistacy\FeatureTraverser\Result\Reference;
+use Pistacy\FeatureTraverser\Result\ReferenceType;
 use PHPUnit\Framework\TestCase;
 
 final class ReferenceTest extends TestCase

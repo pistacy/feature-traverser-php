@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeviastudio\FeatureTraverser;
+namespace Pistacy\FeatureTraverser;
 
-use Codeviastudio\FeatureTraverser\Analyzer\AstAnalyzer;
-use Codeviastudio\FeatureTraverser\Config\TraversalConfig;
-use Codeviastudio\FeatureTraverser\Resolver\ClassResolver;
-use Codeviastudio\FeatureTraverser\Result\Reference;
-use Codeviastudio\FeatureTraverser\Result\ReferenceCollection;
-use Codeviastudio\FeatureTraverser\Result\ReferenceType;
+use Pistacy\FeatureTraverser\Analyzer\AstAnalyzer;
+use Pistacy\FeatureTraverser\Config\TraversalConfig;
+use Pistacy\FeatureTraverser\Resolver\ClassResolver;
+use Pistacy\FeatureTraverser\Result\Reference;
+use Pistacy\FeatureTraverser\Result\ReferenceCollection;
+use Pistacy\FeatureTraverser\Result\ReferenceType;
 
 final readonly class FeatureTraverser
 {
