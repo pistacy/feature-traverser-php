@@ -20,20 +20,24 @@ use Pistacy\FeatureTraverser\FeatureTraverser;
 use Pistacy\FeatureTraverser\Parser\ParserCache;
 use Pistacy\FeatureTraverser\Resolver\ClassResolver;
 
-// Get the Composer ClassLoader from the main project (for resolving Pistacy classes)
-$classLoader = require __DIR__ . '/../../vendor/autoload.php';
+// Define the project root for the analyzed project
+$projectRoot = __DIR__ . '/../../projects/veramerge';
 
 // Create ParserCache to avoid parsing files multiple times
 $parserCache = new ParserCache();
 
-// Create the traverser with shared cache
-$classResolver = new ClassResolver($classLoader);
+// Automatically read PSR-4 mappings from composer.json and create resolver
+$classResolver = ClassResolver::fromComposerJson($projectRoot);
+
+echo "Loaded PSR-4 mappings from: {$projectRoot}/composer.json\n\n";
+
+// Create the traverser
 $astAnalyzer = new AstAnalyzer($parserCache);
 $traverser = new FeatureTraverser($classResolver, $astAnalyzer);
 
 // Configure the traversal
 $entryPoint = new EntryPoint(
-    className: 'Pistacy\Pistacy\C4Model\UserInterface\Web\Controller\AddElementToViewController',
+    className: 'Codeviastudio\Pistacy\C4Model\UserInterface\Web\Controller\AddElementToViewController',
     methodName: '__invoke',
 );
 
